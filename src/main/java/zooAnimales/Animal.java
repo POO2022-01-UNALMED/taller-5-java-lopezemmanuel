@@ -70,7 +70,7 @@ public class Animal {
 		Animal.totalAnimales += 1;
 	}
 	
-	public String totalPorTipo() {
+	public static String totalPorTipo() {
 		int mamiferos = Mamifero.getListado().size();
 		int aves = Ave.getListado().size();
 		int reptiles = Reptil.getListado().size();
