@@ -59,17 +59,22 @@ public class Anfibio extends Animal {
 		this.venenoso = venenoso;
 	}
 	
-	public void crearRana(String nombre, int edad, String genero) {
+	public static void crearRana(String nombre, int edad, String genero) {
 		Anfibio.listado.add(new Anfibio(nombre, edad, "selva", genero, "rojo", true));
 		Anfibio.ranas += 1;
 	}
 	
-	public void crearBacalao(String nombre, int edad, String genero) {
+	public static void crearBacalao(String nombre, int edad, String genero) {
 		Anfibio.listado.add(new Anfibio(nombre, edad, "selva", genero, "negro", true));
 		Anfibio.salamandras += 1;
 	}
 	
 	public int cantidadAnfibios() {
 		return Anfibio.listado.size();
+	}
+	
+	@Override
+	public String movimiento() {
+		return "saltar";
 	}
 }

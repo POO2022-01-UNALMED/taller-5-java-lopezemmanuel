@@ -95,6 +95,6 @@ public class Animal {
 	}
 	
 	public String movimiento() {
-		return "";
+		return "desplazarse";
 	}
 }

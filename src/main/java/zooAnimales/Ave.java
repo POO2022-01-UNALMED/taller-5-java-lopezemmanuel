@@ -49,17 +49,22 @@ public class Ave extends Animal {
 		this.colorPlumas = colorPlumas;
 	}
 	
-	public void crearHalcon(String nombre, int edad, String genero) {
+	public static void crearHalcon(String nombre, int edad, String genero) {
 		Ave.listado.add(new Ave(nombre, edad, "montanas", genero, "cafe glorioso"));
 		Ave.halcones += 1;
 	}
 	
-	public void crearAguila(String nombre, int edad, String genero) {
+	public static void crearAguila(String nombre, int edad, String genero) {
 		Ave.listado.add(new Ave(nombre, edad, "montanas", genero, "blanco"));
 		Ave.aguilas += 1;
 	}
 	
 	public int cantidadAves() {
 		return Ave.listado.size();
+	}
+	
+	@Override
+	public String movimiento() {
+		return "volar";
 	}
 }
