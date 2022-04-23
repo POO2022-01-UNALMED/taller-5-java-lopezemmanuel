@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Zona {
 	private String nombre;
 	private Zoologico zoo;
-	private ArrayList<Animal> animales;
+	private ArrayList<Animal> animales = new ArrayList<Animal>();
 
 	public String getNombre() {
 		return nombre;
@@ -33,7 +33,7 @@ public class Zona {
 	}
 
 	public Zona() {
-		this("", new Zoologico());
+		this(null, null);
 	}
 
 	public Zona(String nombre, Zoologico zoo) {
