@@ -8,6 +8,8 @@ public class Animal {
 	private int edad;
 	private String habitat;
 	private String genero;
+	private Zona zona;
+	
 	public static int getTotalAnimales() {
 		return totalAnimales;
 	}
@@ -48,16 +50,14 @@ public class Animal {
 		this.genero = genero;
 	}
 
-	public Zona[] getZona() {
+	public Zona getZona() {
 		return zona;
 	}
 
-	public void setZona(Zona[] zona) {
+	public void setZona(Zona zona) {
 		this.zona = zona;
 	}
 
-	private Zona[] zona;
-	
 	public Animal() {
 		this("", 0, "", "");
 	}
@@ -67,5 +67,34 @@ public class Animal {
 		this.edad = edad;
 		this.habitat = habitat;
 		this.genero = genero;
+		Animal.totalAnimales += 1;
+	}
+	
+	public String totalPorTipo() {
+		int mamiferos = Mamifero.getListado().size();
+		int aves = Ave.getListado().size();
+		int reptiles = Reptil.getListado().size();
+		int peces = Pez.getListado().size();
+		int anfibios = Anfibio.getListado().size();
+		
+		return "Mamiferos: " + mamiferos + "\n"
+			 + "Aves:" + aves + "\n"
+			 + "Reptiles:"+ reptiles + "\n"
+			 + "Peces:"+ peces + "\n"
+			 + "Anfibios:" + anfibios;
+	}
+
+	@Override
+	public String toString() {
+		if(this.zona != null) {
+			return "Mi nombre es " + this.nombre + ", tengo una edad de " + this.edad + ", habito en " + this.habitat + " y mi genero es " + this.genero + ", la zona en la que me ubico es " + this.zona.getNombre() + ", en el " + this.zona.getZoo();			
+		} else {
+			return "Mi nombre es " + this.nombre + ", tengo una edad de " + this.edad + ", habito en " + this.habitat + " y mi genero es " + this.genero;
+		}
+		
+	}
+	
+	public String movimiento() {
+		return "";
 	}
 }
