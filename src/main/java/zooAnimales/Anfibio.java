@@ -3,20 +3,11 @@ package zooAnimales;
 import java.util.ArrayList;
 
 public class Anfibio extends Animal {
-	private static int cantidadAnfibios = 0;
 	private static ArrayList<Anfibio> listado = new ArrayList<Anfibio>();
 	public static int ranas;
 	public static int salamandras;
 	private String colorPiel;
 	private boolean venenoso;
-
-	public static int getCantidadAnfibios() {
-		return cantidadAnfibios;
-	}
-
-	public static void setCantidadAnfibios(int cantidadAnfibios) {
-		Anfibio.cantidadAnfibios = cantidadAnfibios;
-	}
 
 	public static ArrayList<Anfibio> getListado() {
 		return listado;
@@ -63,22 +54,23 @@ public class Anfibio extends Animal {
 	}
 	
 	public Anfibio(String nombre, int edad, String habitat, String genero, String colorPiel, boolean venenoso) {
-		super(nombre, edad, habitat, genero);
+		this.setNombre(nombre);
+		this.setEdad(edad);
+		this.setHabitat(habitat);
+		this.setGenero(genero);
 		this.colorPiel = colorPiel;
 		this.venenoso = venenoso;
-		Anfibio.cantidadAnfibios += 1;
+		Anfibio.listado.add(this);
 	}
 	
 	public static Anfibio crearRana(String nombre, int edad, String genero) {
 		Anfibio animal = new Anfibio(nombre, edad, "selva", genero, "rojo", true);
-		Anfibio.listado.add(animal);
 		Anfibio.ranas += 1;
 		return animal;
 	}
 	
 	public static Anfibio crearSalamandra(String nombre, int edad, String genero) {
 		Anfibio animal = new Anfibio(nombre, edad, "selva", genero, "negro", true);
-		Anfibio.listado.add(animal);
 		Anfibio.salamandras += 1;
 		return animal;
 	}
