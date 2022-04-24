@@ -20,7 +20,7 @@ public class TestCantidades {
 	
 	public static Zoologico zoo = new Zoologico();
 	
-	static {
+	public static void inicializacion() {
 		Zona z1 = new Zona();
 		Zona z2 = new Zona();
 		zoo.agregarZonas(z1);
@@ -47,16 +47,19 @@ public class TestCantidades {
 	
 	@Test
    	public void testCantidadTotalAnimales(){
+		inicializacion();
 		assertEquals(zoo.cantidadTotalAnimales(), 13, "Hay un problema en el metodo de cantidadTotalAnimales en la clase Zoologico");
     }
 	
 	@Test
    	public void testCantidadAnimalesZonas(){
+		inicializacion();
 		assertEquals(zoo.getZona().get(0).cantidadAnimales(), 8, "Hay un problema en el metodo de cantidadAnimales en la clase Zona");
     }
 	
 	@Test
    	public void testCantidadMamiferos(){
+		inicializacion();
 		boolean ok = false;
 		
 		if(Mamifero.caballos == 3 && Mamifero.leones == 1) {
@@ -67,6 +70,7 @@ public class TestCantidades {
 	
 	@Test
    	public void testCantidadAves(){
+		inicializacion();
 		boolean ok = false;
 		
 		if(Ave.aguilas == 2 && Ave.halcones == 3) {
@@ -77,7 +81,7 @@ public class TestCantidades {
 	
 	@Test
    	public void testCantidadAnfibios(){
-		
+		inicializacion();
 		boolean ok = false;
 		
 		if(Anfibio.ranas == 2 && Anfibio.salamandras == 1) {
@@ -88,7 +92,7 @@ public class TestCantidades {
 	
 	@Test
    	public void testCantidadReptiles(){
-		
+		inicializacion();
 		boolean ok = false;
 		
 		if(Reptil.iguanas == 2 && Reptil.serpientes == 1) {
@@ -99,7 +103,7 @@ public class TestCantidades {
 	
 	@Test
    	public void testCantidadPeces(){
-		
+		inicializacion();
 		boolean ok = false;
 		
 		if(Pez.salmones == 1 && Pez.bacalaos == 2) {
